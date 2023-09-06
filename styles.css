@@ -1,0 +1,569 @@
+/* ################# ROOT TAGS START ################### */
+:root{
+    --color-one:#212c3b;
+    --color-two:#458f95;
+    --color-three:#7cdfd9;
+    --color-four:#e1f2f1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-size: 100%;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--color-four);
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--color-one);
+    background-image: linear-gradient(0deg, rgba(124,223,217,1) 0%, rgba(69,143,149,1) 23%, rgba(33,44,59,1) 68%),url(./assets/images/hero.jpg);
+    background-blend-mode:hard-light;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    max-width:100vw;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+/* ############################################################ ROOT TAGS END ################### */
+
+/* ################################################################ HEADER SECTION ########### */
+header{
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between  ;
+    backdrop-filter: blur(0.2rem);
+}
+.logo img{
+    height: 5rem;
+}
+nav{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+nav a{
+    text-decoration: none;
+    color: var(--color-four);
+    font-size: 1.5rem;
+}
+
+/* HAMBURGER CHECKBOX */
+.hamb-menu{
+    display: none;
+    padding: 1.5rem 1rem 1rem 0;
+}
+.hamb{
+    cursor: pointer;
+    float: right;
+}
+.hamb-line {
+    background: var(--color-four);
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 1.5rem;
+
+} 
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--color-four);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 8px;
+    width: 1rem;
+}
+.hamb-line::after{
+    top: -8px;
+    width: 2rem;
+}
+.side-menu {
+    display: none;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+    width: 2rem;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+    width: 2rem;
+}
+
+/* NAV LINKS HOVER AND ACTIVE EFFECTS  */
+nav a{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    transition: 0.15s ease-in-out;
+}
+nav a:after, nav .active:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2rem;
+    left: 0;
+    bottom: 0;
+    background: var(--color-four);
+    transform-origin: bottom right;
+    transition: transform 0.35s ease-out;
+}
+nav a:hover{
+    color:var(--color-three);
+}
+nav a:hover:after{
+    transform: scaleX(1);
+    transform-origin: top left;
+}
+nav .active{
+    color: var(--color-three);
+}
+nav .active:after{
+    transform: scaleX(1);
+}
+/*END OF NAVIGATION TAGS*/
+
+/* MOBILE/TABLET NAVIGATION AND HEADER CSS TRIGGERED BY CHECKBOX AND JS */
+.header-mobile{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    background-color: #212c3b95;
+
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+    grid-template: 1fr 10fr / 1fr;
+}
+.header-mobile .logo{
+    grid-area: 1/1/1/1;
+}
+.header-mobile .hamb-menu{
+    grid-area: 1/1/1/2;
+}
+.nav-mobile{
+    grid-area: 2/1/3/2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.nav-mobile a{
+    border-bottom: solid var(--color-two) 0.1rem;
+    width: 80%;
+}
+.nav-mobile a:hover:after, .nav-mobile .active:after{
+    transform: scaleX(0);
+}
+
+/* ############################################################### HEADER SECTION END ########### */
+
+
+/* ############################################################### MAIN SECTION START ########### */
+main{
+    font-size: 2rem;
+    display:grid;
+    flex-grow: 1;
+}
+
+
+
+
+/* Home Page*/
+.main-home{
+    grid-template: 1fr / 1.5fr 1fr;
+    gap: 4rem;
+    align-self: center;
+}
+.left{
+    margin-left: 5rem;
+    display: flex;
+    flex-flow: column;
+    justify-content:center;
+    text-align: end;
+    gap: 2rem;
+}
+.left p:nth-child(1){
+    color: var(--color-three);
+    border-top: solid var(--color-four) 0.1rem;
+    border-left: solid var(--color-four) 0.1rem;
+    padding-top: 2rem;
+    font-size: 3.5rem;
+    font-weight:bold;
+}
+.left p:nth-child(3){
+    border-bottom: solid var(--color-four) 0.1rem;
+    border-left: solid var(--color-four) 0.1rem;
+    padding-bottom: 2rem;
+}
+.left p .fa{
+    font-size: 3rem;
+    margin: 1rem;
+    transition: 0.2s ease-in-out;
+}
+.left p .fa:hover{
+    color: var(--color-three);
+    transform: scale(1.2);
+}
+.right{
+    display: flex;
+    justify-content: start;
+    align-items:center;
+}
+.right img{
+    border: solid var(--color-four) 0.1rem;
+    height: 22rem;
+    border-radius: 50%;
+    background-image: linear-gradient(0deg, rgba(124,223,217,1) 0%, rgba(69,143,149,1) 23%, rgba(33,44,59,1) 68%);
+    box-shadow: rgba(124, 223, 217, 0.4) 5px 5px 5px 2px, rgba(124, 223, 217, 0.3) 10px 10px, rgba(124, 223, 217, 0.2) 0px 15px, rgba(124, 223, 217, 0.1) 0px 20px, rgba(124, 223, 217, 0.05) 0px 25px;
+}
+
+
+
+
+/* Resume Page*/
+.main-resume{
+    align-self: center;
+    display: flex;
+    max-width: 85%;
+    gap: 1rem;
+    margin: 0 0 1rem 0;
+}
+.flex-right{
+    flex: 0 0 25%;
+}
+.main-resume .card{
+    margin: 1rem 0;
+}
+.main-resume .card > *{
+    padding: 1rem 1rem;
+}
+.main-resume .card .title{
+    background: #458f9570;
+    background: linear-gradient(0deg, rgba(69,143,149,0.5) 0%, rgba(124,223,217,0.8) 100%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 5px 3px 3px;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border: solid var(--color-four) 0.1rem;
+    font-size: 1.5rem;
+    color: var(--color-one);
+    font-weight: bold;
+}
+.main-resume .card .content{
+    background-color: #7cdfd935;
+    -webkit-box-shadow: inset 0px 0px 19px -8px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 19px -8px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 19px -8px rgba(0,0,0,1);
+    font-size: 1.2rem;
+    text-align: justify;
+}
+.main-resume .card .content ul li{
+    margin-bottom: 1rem;
+}
+
+/* ABOUT ME */
+
+
+/* SKILLS */
+.main-resume .flex-right :nth-child(1) .content ul{
+    padding: 1rem;
+    text-align:start;
+}
+
+/* EDUCATION */
+.main-resume .flex-left :nth-child(2) .content ul{
+    list-style-type: none;
+}
+
+/* COURSES AND CERTIFICATES */
+.main-resume .flex-right :nth-child(2) > * img{
+    width: auto;
+    height: 5rem;
+}
+.main-resume .flex-right :nth-child(2) > * .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.main-resume .flex-right :nth-child(2) > * .container p{
+    align-self: center;
+    text-align: left;
+}
+
+/* WORK EXPERIENCE */
+.main-resume .flex-left :nth-child(3) .content{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+.main-resume .flex-left :nth-child(3) .content ul{
+    padding:0.5rem 1rem;
+}
+.main-resume .flex-left :nth-child(3) .content ul ul{
+    text-align: left;
+}
+
+
+
+/* Projects Page*/
+.main-projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+/* Contacts Page*/
+.main-contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+}
+.main-contacts .greeting{
+    text-align: center;
+}
+.main-contacts form{
+    width: 50%;
+}
+.main-contacts form ul{
+    list-style: none;
+    padding: 2rem;
+}
+.main-contacts form li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+.main-contacts form li input, .main-contacts form li textarea, .main-contacts form li input::placeholder, .main-contacts form li textarea::placeholder{
+    color: var(--color-four); 
+}
+
+.main-contacts > * button{
+    background: #458f9570;
+    background: linear-gradient(0deg, rgba(69,143,149,0.5) 0%, rgba(124,223,217,0.8) 100%);
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+.main-contacts > * button:hover{
+    background: #458f9530;
+    background: linear-gradient(0deg, rgba(69,143,149,0.1) 0%, rgba(124,223,217,0.5) 100%);
+}
+
+.main-contacts textarea{
+    vertical-align: top;
+    height: 5em;
+}
+.main-contacts input, .main-contacts textarea{
+    background-color: #7cdfd990;
+}
+
+/* ########################################################################### MAIN SECTION END ########### */
+
+footer{
+    text-align: center;
+    width: 100%;
+    padding: .5rem;
+    background-color:#458f9580;
+    margin-top: auto;
+}
+
+/* ###################################################################### MEDIA QUERIES ####################### */
+
+/* Mobile/Tablet screen responsivness */
+
+@media (max-width: 723px) {
+
+    body{
+        background-attachment: scroll;
+    }
+
+
+
+
+    /* Header  */
+    header{
+        padding: 0;
+    }
+
+
+
+
+    /* Home Main */
+    .main-home{
+        grid-template:1fr 1fr 1fr/ 1fr;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+        font-size: 1.5rem;
+    }
+    .main-home > *{
+        justify-content: center;
+        align-items: center;
+    }   
+    .main-home > * p{
+        margin: 0;
+        padding:0.5rem;
+    }
+    .left p:nth-child(1){
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .left p:nth-child(2){
+        text-align: center;
+    }
+    .left p .fa{
+        font-size: 2.5rem;
+    }
+    .left{
+        grid-area: 2/1/4/-1;
+        gap: 0.5rem;
+        margin:0 !important;
+    }
+
+    .right{
+        grid-area: 1/1/1/-1;
+        order: -1;
+    }
+    .right img{
+        height: 12rem;
+        background-image: linear-gradient(0deg, rgba(124,223,217,1) 0%, rgba(69,143,149,1) 23%, rgba(33,44,59,1) 68%);
+        box-shadow: rgba(124, 223, 217, 0.4) 5px 5px 5px 2px, rgba(124, 223, 217, 0.3) 10px 10px, rgba(124, 223, 217, 0.2) 0px 15px, rgba(124, 223, 217, 0.1) 0px 20px, rgba(124, 223, 217, 0.05) 0px 25px;
+    }
+
+
+
+
+    /* Resume Main */
+    .main-resume{
+        max-width: 100% !important;
+        gap: 0 !important;
+        margin: 0;
+    }
+    .main-resume .card{
+        font-size: smaller;
+    }
+    .main-resume .card{
+        margin: 0 0;
+    }
+    .main-resume .card .title{
+        border-radius: 0;
+        padding: .2rem;
+        border-right: none;
+        border-left: none;
+    }
+    .main-resume .card .content{
+        text-align: left;
+    }
+    .main-resume .flex-left :nth-child(1) .content{
+        text-align: justify;
+    }
+
+
+
+    /* Contact Main */
+    .main-contacts > *{
+        font-size: smaller;
+    }
+    .main-contacts form ul{
+        padding: 0rem;
+    }
+}
+
+
+/* Smaller Screen, Laptops Responsivness */
+
+@media (max-width: 1024px)
+{
+/* Header */
+    .logo img{
+        height: 3rem;
+        padding: 0.5rem 0 0 0.5rem;
+    }
+    .hamb-menu{
+        display: block;
+    }
+    nav{
+        display: none;
+        gap: 0;
+    }
+
+
+/* Home Main */
+    .left{
+        margin-left: 2rem;
+    }
+    .left p:nth-child(1){
+        font-size: 2.5rem;
+        border: none;
+    }
+    .left p:nth-child(2){
+        font-size: 1.5rem;
+    }
+    .left p:nth-child(3){
+        border: none;
+    }
+    .left p .fa{
+        font-size: 2.5rem;
+    }
+    .right img{
+        height: 15rem;
+        border: none;
+    }
+
+
+/* Resume Main */
+    .main-resume{
+        max-width: 95%;
+        gap: .5rem;
+        flex-direction: column;
+    }
+    /* COURSES AND CERTIFICATES */
+    .main-resume .flex-right :nth-child(2) > * .container{
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+
+
+/* Contact Main */
+    .main-contacts form{
+        width: 100%;
+    }
+}

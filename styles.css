@@ -229,11 +229,10 @@ main{
 .left p .fa{
     font-size: 3rem;
     margin: 1rem;
-    transition: 0.2s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 .left p .fa:hover{
     color: var(--color-three);
-    transform: scale(1.2);
 }
 .right{
     display: flex;
@@ -378,7 +377,11 @@ main{
 .main-contacts > * button{
     background: #458f9570;
     background: linear-gradient(0deg, rgba(69,143,149,0.5) 0%, rgba(124,223,217,0.8) 100%);
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
+    width: fit-content;
+    padding: 0.5rem;
+    align-self: center;
+    border: none;
     cursor: pointer;
 }
 .main-contacts > * button:hover{
@@ -391,7 +394,10 @@ main{
     height: 5em;
 }
 .main-contacts input, .main-contacts textarea{
-    background-color: #7cdfd990;
+    background-color: #7cdfd925;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
 }
 
 /* ########################################################################### MAIN SECTION END ########### */

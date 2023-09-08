@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mantas Mozuraitis</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logos/favicon.png">
     <link rel="stylesheet" href=".//styles.css">
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,22 +45,21 @@
                 <p>If you would like to work with me, hire me or have a general enquiry, please do not hesitate and leave me a message</p>
             </div>
 
-            <form action="" method="post">
-
+            <form action="https://formsubmit.co/mozmantas@gmail.com" method="post">
+                <input type="hidden" name="_subject" value="mantasmozuraitis.com new message!"/>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://mantasmozuraitis.com">
                 <ul>
                     <li>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="user_name" placeholder="Enter your name*"/>
+                        <input type="text" id="name" name="user_name" placeholder="Your name" required/>
                     </li>
 
                     <li>
-                        <label for="mail">Email</label>
-                        <input type="email" id="mail" name="user_email" placeholder="Enter your email*"/>
+                        <input type="email" id="mail" name="user_email" placeholder="Your email address" required/>
                     </li>
 
                     <li>
-                        <label for="msg">Message</label>
-                        <textarea id="msg" name="user_message" placeholder="Write your message here*"></textarea>
+                        <textarea id="msg" name="user_message" placeholder="Your message..." required></textarea>
                     </li>
 
                     <li>
